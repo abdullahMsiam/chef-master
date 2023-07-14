@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card, CardGroup, Container, Row } from 'react-bootstrap';
 import ChefCard from './ChefCard';
+import myImage from '../../assets/banner.avif'
 
 const Home = () => {
 
@@ -15,7 +16,21 @@ const Home = () => {
     return (
         <Container>
             <div>
-                <h3>All Chefs Here</h3>
+                <Card className="bg-dark text-white">
+                    <Card.Img src={myImage} alt="Card image" />
+
+                    <Card.ImgOverlay className='my-auto'>
+                        <Card.Title className='fw-bold text-dark py-auto fs-2'>CHEF-MASTER</Card.Title>
+                        <Card.Text className='mt-lg-3 fs-5 text-dark'>
+                            Our service is providing a perfect chef to you. <br />
+                            We are very concern about your test and want to ensure what kind of test you interested! <br />
+                            Our service is providing a perfect chef to you.
+                        </Card.Text>
+                    </Card.ImgOverlay>
+                </Card>
+            </div>
+            <div>
+                <h3 className='text-center mt-5'>All Chefs Here</h3>
                 <Row xs={1} md={3} className="g-4">
                     {
                         chefs.map(chef => <ChefCard
