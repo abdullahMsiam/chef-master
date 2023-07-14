@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Card, CardGroup, Container, Row } from 'react-bootstrap';
+import ChefCard from './ChefCard';
 
 const Home = () => {
 
@@ -11,19 +13,20 @@ const Home = () => {
             .catch(error => console.log(error))
     }, [])
     return (
-        <div>
-            <h3>All Chefs Here</h3>
+        <Container>
             <div>
-                {
-                    chefs.map(chef => <p
-                        key={chef.unique_id}
-                    >
-                        {chef.chef_name}
-
-                    </p>)
-                }
+                <h3>All Chefs Here</h3>
+                <Row xs={1} md={3} className="g-4">
+                    {
+                        chefs.map(chef => <ChefCard
+                            key={chef.unique_id}
+                            chef={chef}
+                        >
+                        </ChefCard>)
+                    }
+                </Row>
             </div>
-        </div>
+        </Container>
     );
 };
 
