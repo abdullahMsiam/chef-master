@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
 import {
   createBrowserRouter,
+  Route,
   RouterProvider,
 } from "react-router-dom";
 import Home from './pages/Home/Home';
@@ -12,6 +13,9 @@ import Register from './pages/register/Register';
 import ChefRecipe from './pages/chef-recipe/ChefRecipe';
 import AuthProvider from './provider/AuthProvider';
 import LoginPage from './pages/login/LoginPage';
+import PrivateRoute from './routes/PrivateRoute';
+import ErrorPage from './pages/errorPage/ErrorPage';
+import ErrorLayout from './layout/ErrorLayout';
 
 const router = createBrowserRouter([
   {
@@ -32,11 +36,21 @@ const router = createBrowserRouter([
       },
       {
         path: '/chef-recipe/:id',
-        element: <ChefRecipe></ChefRecipe>,
+        element: <PrivateRoute><ChefRecipe></ChefRecipe></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/chefs/${params.id}`)
       }
     ]
   },
+  {
+    path: '/',
+    element: <ErrorLayout></ErrorLayout>,
+    children: [
+      {
+        path: '/*',
+        element: <ErrorPage></ErrorPage>
+      }
+    ]
+  }
 ]);
 
 
