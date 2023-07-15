@@ -6,8 +6,13 @@ import { FaUserCircle } from 'react-icons/fa';
 
 const ChefNav = () => {
 
-    const { user } = useContext(AuthContext);
-    console.log(user);
+    const { user, logout } = useContext(AuthContext);
+    // console.log(user);
+    const handleLogout = () => {
+        logout()
+            .then()
+            .catch(error => console.log(error))
+    }
 
     return (
         <Container>
@@ -29,7 +34,7 @@ const ChefNav = () => {
                             user ?
                                 <div className='d-flex align-items-center'>
                                     <FaUserCircle className='fs-2 me-1'></FaUserCircle>
-                                    <Link to=""><Button variant="success">Logout</Button></Link>
+                                    <Link onClick={handleLogout}><Button variant="success">Logout</Button></Link>
                                 </div> :
                                 <Link to="/login"><Button variant="success">Login</Button></Link>
                         }
