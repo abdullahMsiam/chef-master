@@ -16,7 +16,7 @@ const Login = () => {
     }
     return (
         <Container>
-            <h3>Please Login</h3>
+            <h3 className='text-center mt-5'>Please Login</h3>
             <Form onSubmit={handleSignIn} className='w-25 mx-auto mt-4'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Enter Your email</Form.Label>
@@ -34,16 +34,16 @@ const Login = () => {
                 <br />
 
                 <Form.Text className="text-muted">
-                    Don't have an account <Link to="/register" className='danger'>Register</Link>
+                    {/* Don't have an account <Link to="/register" className='danger'>Register</Link> */}
+                </Form.Text>
+
+                {/* <Form.Text className="text-muted">
+
                 </Form.Text>
 
                 <Form.Text className="text-muted">
 
-                </Form.Text>
-
-                <Form.Text className="text-muted">
-
-                </Form.Text>
+                </Form.Text> */}
             </Form>
         </Container>
     );
