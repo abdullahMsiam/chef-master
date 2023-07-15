@@ -16,14 +16,14 @@ const Home = () => {
     return (
         <Container>
             <div>
-                <Card className="bg-dark text-white">
+                <Card className="bg-dark text-white mt-5">
                     <Card.Img src={myImage} alt="Card image" />
 
-                    <Card.ImgOverlay className='my-auto'>
-                        <Card.Title className='fw-bold text-dark py-auto fs-2'>CHEF-MASTER</Card.Title>
-                        <Card.Text className='mt-lg-3 fs-5 text-dark'>
+                    <Card.ImgOverlay className='my-auto mt-lg-5'>
+                        <Card.Title className='fw-bold text-dark mt-lg-5 py-auto fs-2'>CHEF-MASTER</Card.Title>
+                        <Card.Text className='mt-lg-4 fs-5 text-dark'>
                             Our service is providing a perfect chef to you. <br />
-                            We are very concern about your test and want to ensure what kind of test you interested! <br />
+                            We are very concern about your test and want to ensure <br></br> what kind of test you interested! <br />
                             Our service is providing a perfect chef to you.
                         </Card.Text>
                     </Card.ImgOverlay>

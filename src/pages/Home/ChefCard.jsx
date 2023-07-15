@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
 import { FaRegHeart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const ChefCard = ({ chef }) => {
     const { chef_name, unique_id, photo_url, experience, number } = chef;
@@ -15,7 +16,7 @@ const ChefCard = ({ chef }) => {
                         <h6 className='ms-auto'>Recipe Number: {number}</h6>
                     </div>
                     <div className=' mt-4 d-flex align-items-center'>
-                        <Button variant="danger">View Recipe</Button>
+                        <Link to={`/chef-recipe/${unique_id}`}><Button variant="danger">View Recipe</Button></Link>
                         <FaRegHeart className='ms-auto'></FaRegHeart>
                     </div>
                 </Card.Body>

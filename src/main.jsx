@@ -10,6 +10,7 @@ import Home from './pages/Home/Home';
 import Main from './layout/Main';
 import Login from './pages/login/login';
 import Register from './pages/register/Register';
+import ChefRecipe from './pages/chef-recipe/ChefRecipe';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,11 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/chef-recipe/:id',
+        element: <ChefRecipe></ChefRecipe>,
+        loader: ({ params }) => fetch(`http://localhost:5000/chefs/${params.id}`)
       }
     ]
   },
