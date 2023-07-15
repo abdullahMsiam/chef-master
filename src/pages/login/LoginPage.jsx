@@ -1,10 +1,7 @@
 import React from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
-
-
-const Login = () => {
+const LoginPage = () => {
     const handleSignIn = event => {
         event.preventDefault();
 
@@ -17,6 +14,7 @@ const Login = () => {
     return (
         <Container>
             <h3 className='text-center mt-5'>Please Login</h3>
+
             <Form onSubmit={handleSignIn} className='w-25 mx-auto mt-4'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Enter Your email</Form.Label>
@@ -27,14 +25,15 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control name='password' type="password" placeholder="Password" required />
                 </Form.Group>
-                <Button variant="success" type="submit">
-                    login
-                </Button>
-
+                <div className='text-center'>
+                    <Button variant="success" type="submit">
+                        login
+                    </Button>
+                </div>
                 <br />
 
                 <Form.Text className="text-muted">
-                    {/* Don't have an account <Link to="/register" className='danger'>Register</Link> */}
+                    Don't have an account <Link to="/register" className='danger'>Register</Link>
                 </Form.Text>
 
                 {/* <Form.Text className="text-muted">
@@ -44,9 +43,16 @@ const Login = () => {
                 <Form.Text className="text-muted">
 
                 </Form.Text> */}
+                <br />
+                <h5 className='text-center mt-3'>OR</h5>
+                <div className='text-center'>
+                    <button className='mx-auto btn btn-outline-danger'>Login with Google</button>
+                    <br />
+                    <button className=' mt-2 btn btn-outline-danger'>Login with Github</button>
+                </div>
             </Form>
         </Container>
     );
 };
 
-export default Login;
+export default LoginPage;

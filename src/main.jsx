@@ -8,10 +8,10 @@ import {
 } from "react-router-dom";
 import Home from './pages/Home/Home';
 import Main from './layout/Main';
-import Login from './pages/login/login';
 import Register from './pages/register/Register';
 import ChefRecipe from './pages/chef-recipe/ChefRecipe';
 import AuthProvider from './provider/AuthProvider';
+import LoginPage from './pages/login/LoginPage';
 
 const router = createBrowserRouter([
   {
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/login',
-        element: <Login></Login>
+        element: <LoginPage></LoginPage>
       },
       {
         path: '/register',
