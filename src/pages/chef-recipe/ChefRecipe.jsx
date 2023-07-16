@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import RecipeCard from './RecipeCard';
+import { ToastContainer } from 'react-toastify';
 
 const ChefRecipe = () => {
     const singleChef = useLoaderData();
@@ -37,6 +38,7 @@ const ChefRecipe = () => {
 
                                 </RecipeCard>)
                             }
+
                         </Row>
                     </div>
                 </div>

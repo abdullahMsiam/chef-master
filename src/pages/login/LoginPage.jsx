@@ -1,14 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 
 const LoginPage = () => {
+    const [erMsg, setErMsg] = useState([]);
     const { signIn, user } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
-    console.log(user);
+
     const handleSignIn = event => {
         event.preventDefault();
 
@@ -16,14 +17,19 @@ const LoginPage = () => {
         const email = form.email.value;
         const password = form.password.value;
 
+        if (password.length !== 6) {
+            setErMsg('Password is not long enough')
+        }
+
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
+                setErMsg(null);
                 navigate(from, { replace: true });
 
             })
             .catch(error => {
-                console.log(error);
+                setErMsg(error.message)
             })
         console.log(email, password);
 
@@ -67,6 +73,9 @@ const LoginPage = () => {
                     <button className='mx-auto btn btn-outline-danger'>Login with Google</button>
                     <br />
                     <button className=' mt-2 btn btn-outline-danger'>Login with Github</button>
+                </div>
+                <div>
+                    <p className='text-danger'>{erMsg}</p>
                 </div>
             </Form>
         </Container>

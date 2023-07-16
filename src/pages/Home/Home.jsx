@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Card, CardGroup, Container, Row } from 'react-bootstrap';
+import { Card, CardGroup, Col, Container, Row } from 'react-bootstrap';
 import ChefCard from './ChefCard';
 import myImage from '../../assets/banner.avif'
+import { FaCarSide, FaDollarSign, FaDove, FaHamburger, FaPizzaSlice, FaGlassCheers, FaHome } from 'react-icons/fa';
 
 const Home = () => {
 
@@ -15,6 +16,7 @@ const Home = () => {
     }, [])
     return (
         <Container>
+            {/* banner */}
             <div>
                 <Card className="bg-dark text-white mt-5">
                     <Card.Img src={myImage} alt="Card image" />
@@ -29,6 +31,30 @@ const Home = () => {
                     </Card.ImgOverlay>
                 </Card>
             </div>
+
+            <h1 className='mt-5 mb-3 text-center'>Recipe categories</h1>
+            <div>
+                <Row xs={2} className=' text-center'>
+                    <Col className='rounded-0 py-5 bg-success-subtle'>
+                        <FaHamburger className='fs-1 mb-3'></FaHamburger> <br />
+                        <h5>Burger</h5>
+                    </Col>
+                    <Col className='border py-5 rounded bg-success-subtle'>
+                        <FaPizzaSlice className='fs-1 mb-3'></FaPizzaSlice> <br />
+                        <h5>Pizza</h5>
+                    </Col>
+                    <Col className='border py-5 rounded bg-success-subtle'>
+                        <FaGlassCheers className='fs-1 mb-3'></FaGlassCheers> <br />
+                        <h5>Family Party</h5>
+                    </Col>
+                    <Col className='border py-5 rounded bg-success-subtle'>
+                        <FaHome className='fs-1 mb-3'></FaHome> <br />
+                        <h5>Home Made</h5>
+                    </Col>
+
+                </Row>
+            </div>
+            {/* chef section  */}
             <div>
                 <h3 className='text-center mt-5'>All Chefs Here</h3>
                 <Row xs={1} md={3} className="g-4">
@@ -41,6 +67,31 @@ const Home = () => {
                     }
                 </Row>
             </div>
+
+            <h2 className='text-center mt-5'>How we work</h2>
+            <Row xs={1} md={3} className='g-4 text-center mt-2 px-4'>
+
+
+                <Col className='border rounded py-5'>
+                    <div>
+                        <FaCarSide className='fs-1'></FaCarSide> <br />
+                        <p>We delivery all product.</p>
+                    </div>
+                </Col>
+                <Col className='border rounded py-5'>
+                    <div>
+                        <FaDollarSign className='fs-1 mb-2'></FaDollarSign> <br />
+                        <p>We are good with finance.</p>
+                    </div>
+                </Col>
+                <Col className='border rounded py-5'>
+                    <div>
+                        <FaDove className='fs-1 mb-2'></FaDove> <br />
+                        <p>Protest any violence.</p>
+                    </div>
+                </Col>
+            </Row>
+
         </Container>
     );
 };
