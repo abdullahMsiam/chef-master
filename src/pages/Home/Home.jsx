@@ -5,6 +5,7 @@ import myImage from '../../assets/banner.jpg'
 import { FaCarSide, FaDollarSign, FaDove, FaHamburger, FaPizzaSlice, FaGlassCheers, FaHome } from 'react-icons/fa';
 import BestRecipe from './BestRecipe';
 import LatestRecipes from './LatestRecipes';
+import Message from './Message';
 
 const Home = () => {
 
@@ -20,15 +21,13 @@ const Home = () => {
         <Container>
             {/* banner */}
             <div className='pt-3 mx-auto'>
-                <div className='d-md-flex gap-4 align-items-baseline'>
+                <div className='d-md-flex gap-2 justify-content-evenly align-items-center'>
                     <div className='w-100'>
                         <img className='img-fluid' src={myImage} alt="" />
                     </div>
-                    <div className='mx-auto w-100 text-center text-md-start'>
-                        <h2 className='fw-bold mb-4'>Hello from Chef-MASTER</h2>
-                        <p>Our service is providing a perfect chef to you.
-                            We are very concern about your test and want to ensure what kind of test you interested!
-                            Our service is providing a perfect chef to you</p>
+                    <div className='mx-auto w-100 text-center text-start'>
+                        <h2 className='fw-bold mb-4'>Hello from 'Chef-MASTER' organization</h2>
+                        <p className='fs-6'>Discover a haven for food enthusiasts in our committee. From seasoned chefs to home cooks, we're a diverse community dedicated to the culinary arts. Our mission is to elevate cooking through workshops, discussions, and shared experiences. We explore traditional recipes and embrace innovative trends, celebrating the magic that happens in the kitchen. Join us to indulge in flavors, share recipes, and connect with fellow food lovers. Whether you're a novice or a culinary aficionado, our committee offers a platform to learn, create, and savor the joy of cooking. Welcome to a world of delectable experiences!</p>
                     </div>
                 </div>
             </div>
@@ -101,6 +100,11 @@ const Home = () => {
                     </div>
                 </Col>
             </Row>
+
+            {/* message */}
+            <div>
+                <Message></Message>
+            </div>
 
 
         </Container>
