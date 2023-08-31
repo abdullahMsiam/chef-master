@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Card, CardGroup, Col, Container, Row } from 'react-bootstrap';
 import ChefCard from './ChefCard';
-import myImage from '../../assets/banner.avif'
+import myImage from '../../assets/banner.jpg'
 import { FaCarSide, FaDollarSign, FaDove, FaHamburger, FaPizzaSlice, FaGlassCheers, FaHome } from 'react-icons/fa';
+import BestRecipe from './BestRecipe';
 
 const Home = () => {
 
@@ -17,22 +18,23 @@ const Home = () => {
     return (
         <Container>
             {/* banner */}
-            <div>
-                <Card className="bg-dark text-white mt-5">
-                    <Card.Img src={myImage} alt="Card image" />
-
-                    <Card.ImgOverlay className='my-auto mt-lg-5'>
-                        <Card.Title className='fw-bold text-dark mt-lg-5 py-auto fs-2'>CHEF-MASTER</Card.Title>
-                        <Card.Text className='mt-lg-4 fs-5 text-dark'>
-                            Our service is providing a perfect chef to you. <br />
-                            We are very concern about your test and want to ensure <br></br> what kind of test you interested! <br />
-                            Our service is providing a perfect chef to you.
-                        </Card.Text>
-                    </Card.ImgOverlay>
-                </Card>
+            <div className='pt-3 mx-auto'>
+                <div className='d-md-flex gap-4 align-items-baseline'>
+                    <div className='w-100'>
+                        <img className='img-fluid' src={myImage} alt="" />
+                    </div>
+                    <div className='mx-auto w-100 text-center text-md-start'>
+                        <h2 className='fw-bold mb-4'>Hello from Chef-MASTER</h2>
+                        <p>Our service is providing a perfect chef to you.
+                            We are very concern about your test and want to ensure what kind of test you interested!
+                            Our service is providing a perfect chef to you</p>
+                    </div>
+                </div>
             </div>
 
-            <h1 className='mt-5 mb-3 text-center'>Recipe categories</h1>
+            {/* latest recipes */}
+
+            <h2 className='mt-5 mb-3 text-center fw-bold text-decoration-underline'>Recipe categories</h2>
             <div>
                 <Row xs={2} className=' text-center'>
                     <Col className='rounded-0 py-5 bg-success-subtle'>
@@ -56,7 +58,7 @@ const Home = () => {
             </div>
             {/* chef section  */}
             <div>
-                <h3 className='text-center mt-5'>All Chefs Here</h3>
+                <h3 className='text-center mt-5 text-decoration-underline fw-bold'>Our Chefs</h3>
                 <Row xs={1} md={3} className="g-4">
                     {
                         chefs.map(chef => <ChefCard
@@ -66,6 +68,10 @@ const Home = () => {
                         </ChefCard>)
                     }
                 </Row>
+            </div>
+            {/* Best recipe section  */}
+            <div>
+                <BestRecipe></BestRecipe>
             </div>
 
             <h2 className='text-center mt-5'>How we work</h2>
@@ -91,6 +97,7 @@ const Home = () => {
                     </div>
                 </Col>
             </Row>
+
 
         </Container>
     );

@@ -15,8 +15,8 @@ const ChefNav = () => {
     }
 
     return (
-        <Container>
-            <Navbar expand="lg" className="bg-body-tertiary">
+        <div className='fixed-top '>
+            <Navbar expand="lg" className="bg-body-tertiary bg-opacity-25">
                 <Container fluid>
                     <Navbar.Brand href="#" className='fw-bold'>Chef-MASTER</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
@@ -42,7 +42,7 @@ const ChefNav = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-        </Container>
+        </div>
     );
 };
 
