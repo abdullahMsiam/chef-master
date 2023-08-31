@@ -4,6 +4,7 @@ import ChefCard from './ChefCard';
 import myImage from '../../assets/banner.jpg'
 import { FaCarSide, FaDollarSign, FaDove, FaHamburger, FaPizzaSlice, FaGlassCheers, FaHome } from 'react-icons/fa';
 import BestRecipe from './BestRecipe';
+import LatestRecipes from './LatestRecipes';
 
 const Home = () => {
 
@@ -33,6 +34,9 @@ const Home = () => {
             </div>
 
             {/* latest recipes */}
+            <div>
+                <LatestRecipes></LatestRecipes>
+            </div>
 
             <h2 className='mt-5 mb-3 text-center fw-bold text-decoration-underline'>Recipe categories</h2>
             <div>
